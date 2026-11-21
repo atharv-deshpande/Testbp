@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Estimate your Public Provident Fund (PPF) maturity value with a transparent year-by-year projection." />
+  <title>PPF Maturity Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="PPF Calculator home"><span class="brand-mark">₹</span><span>Money<span class="brand-light">Wise</span></span></a>
+    <span class="header-note">INDIA · SAVINGS PLANNER</span>
+  </header>
+
+  <main class="page-shell">
+    <section class="intro">
+      <p class="eyebrow">PLAN TODAY. GROW TOMORROW.</p>
+      <h1>PPF Maturity <span>Calculator</span></h1>
+      <p class="intro-copy">See how your Public Provident Fund investment could grow over its 15-year tenure.</p>
+    </section>
+
+    <section class="calculator-grid" aria-label="PPF calculator">
+      <form class="panel input-panel" id="calculator-form" novalidate>
+        <div class="panel-heading">
+          <div><p class="eyebrow">YOUR INVESTMENT</p><h2>Set your plan</h2></div>
+          <span class="step-badge">01</span>
+        </div>
+
+        <label for="frequency">How would you like to invest?</label>
+        <select id="frequency" name="frequency">
+          <option value="yearly">Every year</option>
+          <option value="monthly">Every month</option>
+          <option value="lump">One-time deposit</option>
+        </select>
+
+        <label for="amount" id="amount-label">Annual investment amount</label>
+        <div class="amount-input"><span>₹</span><input id="amount" name="amount" type="number" min="1" step="1" value="100000" inputmode="numeric" /></div>
+        <p class="field-hint" id="amount-hint">Enter an amount between ₹500 and ₹1,50,000 per financial year.</p>
+
+        <div id="deposit-timing-wrap">
+          <label for="timing">When will you deposit?</label>
+          <select id="timing" name="timing">
+            <option value="early">On or before the 5th of the month (eligible for that month's interest)</option>
+            <option value="late">After the 5th (interest starts next month)</option>
+          </select>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <label for="rate">Annual interest rate</label>
+            <div class="rate-input"><input id="rate" name="rate" type="number" min="0" max="20" step="0.01" value="7.10" /><span>%</span></div>
+          </div>
+          <div>
+            <label for="tenure">Tenure</label>
+            <div class="fixed-field"><strong>15</strong><span>years</span></div>
+          </div>
+        </div>
+        <p class="field-hint">The rate is editable. The projection assumes it stays unchanged for the full tenure.</p>
+
+        <button class="calculate-button" type="submit">Calculate maturity <span aria-hidden="true">→</span></button>
+        <p class="form-error" id="form-error" role="alert" aria-live="polite"></p>
+      </form>
+
+      <section class="panel result-panel" aria-live="polite">
+        <div class="panel-heading result-heading">
+          <div><p class="eyebrow">YOUR PROJECTED OUTCOME</p><h2>At the end of 15 years</h2></div>
+          <span class="step-badge">02</span>
+        </div>
+        <div class="maturity-card">
+          <p>Estimated maturity value</p>
+          <div class="maturity-value" id="maturity-value">₹ 0</div>
+          <span class="result-caption">Tax-free PPF maturity, subject to applicable rules</span>
+        </div>
+        <div class="breakdown">
+          <div><span>Total invested</span><strong id="total-invested">₹ 0</strong></div>
+          <div><span>Estimated interest earned</span><strong class="interest" id="interest-earned">₹ 0</strong></div>
+        </div>
+        <div class="chart-section">
+          <div class="chart-title"><h3>Growth over time</h3><span>Illustrative</span></div>
+          <div class="bar-chart" id="growth-chart" role="img" aria-label="Year-wise PPF investment growth chart"></div>
+          <div class="chart-legend"><span><i class="legend-principal"></i>Invested</span><span><i class="legend-interest"></i>Interest</span></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="panel schedule-panel">
+      <div class="panel-heading"><div><p class="eyebrow">YEAR-BY-YEAR VIEW</p><h2>How your balance may grow</h2></div></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Year</th><th>Yearly deposit</th><th>Total invested</th><th>Interest earned</th><th>Closing balance</th></tr></thead>
+          <tbody id="schedule-body"><tr><td colspan="5" class="empty-row">Enter your investment details to see the projection.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside class="disclaimer">
+      <strong>Important:</strong> This is an estimate, not an official PPF statement or investment advice. PPF interest is calculated monthly on the lowest balance between the 5th and the end of each month and credited annually. This calculator models that monthly balance convention and assumes a constant rate for illustration. Actual returns can differ when Government-notified rates change. PPF deposits are subject to a minimum of ₹500 and maximum of ₹1,50,000 per financial year. Confirm current rules and rates with India Post or your bank.
+      <p>Rate reference: <a href="https://dea.gov.in/budget-division/475" target="_blank" rel="noopener noreferrer">Department of Economic Affairs – Small Savings rates</a>.</p>
+    </aside>
+  </main>
+  <footer><span>MoneyWise · PPF Planner</span><span>For educational estimates only</span></footer>
+</body>
+</html>
