@@ -32,9 +32,9 @@ Then visit http://localhost:8000.
 - A one-time deposit is assumed to be made in April of year one.
 - The calculator is an educational estimate, not an official PPF account statement. Actual maturity value depends on deposit dates, account opening date, applicable rules, and notified rates.
 
-## PPF limits and rate reference
+## PPF limits and current rate reference
 
-The app uses the commonly applicable annual contribution limits of ₹500 minimum and ₹1,50,000 maximum. Check current rules and rates with your bank, India Post, or the Department of Economic Affairs:
+The app uses the commonly applicable annual contribution limits of ₹500 minimum and ₹1,50,000 maximum. The default interest rate is 7.10%, the notified PPF rate for Q3 FY 2026-27 (1 October to 31 December 2026). The rate is editable because Government-notified rates may change quarterly. Confirm current rules and rates with your bank, India Post, or the Department of Economic Affairs.
 
 - [Department of Economic Affairs – Small Savings](https://dea.gov.in/budget-division/475)
 - [India Post – National Savings Schemes](https://www.indiapost.gov.in/Financial/Pages/Content/National-Savings-Schemes.aspx)
